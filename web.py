@@ -38,7 +38,6 @@ else:
             if st.button("✕", key=f"del_{index}", help="Изтрий задачата"):
                 todos.pop(index)
                 functions.write_todos(todos)
-                del st.session_state[todo]
                 st.rerun()
 
 st.markdown('</div>', unsafe_allow_html=True)
