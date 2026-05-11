@@ -1,11 +1,17 @@
-def get_todos(filepath="todo.txt"):
-    """Read the todo.txt file and return a list"""
-    with open(filepath, "r") as file_local:
-        todos_local = file_local.readlines()
-    return todos_local
+FILEPATH = "todo.txt"
 
-def write_todos(todos_arg,filepath="todo.txt"):
-    """Write the list of todos to a file"""
-    with open(filepath, "w") as file_local:
-        file_local.writelines(todos_arg)
 
+def get_todos(filepath=FILEPATH):
+    """Read todos from file and return a list."""
+    try:
+        with open(filepath, "r") as f:
+            todos = f.readlines()
+    except FileNotFoundError:
+        todos = []
+    return todos
+
+
+def write_todos(todos, filepath=FILEPATH):
+    """Write the list of todos back to the file."""
+    with open(filepath, "w") as f:
+        f.writelines(todos)

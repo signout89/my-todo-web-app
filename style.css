@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap');
+
+/* â”€â”€â”€ Root & Background â”€â”€â”€ */
+html, body, [data-testid="stApp"] {
+    background-color: #0e0e12 !important;
+    color: #e8e4d9 !important;
+    font-family: 'DM Sans', sans-serif !important;
+}
+
+/* â”€â”€â”€ Hide default Streamlit chrome â”€â”€â”€ */
+#MainMenu, footer, header { visibility: hidden; }
+[data-testid="stToolbar"] { display: none; }
+
+/* â”€â”€â”€ Scrollbar â”€â”€â”€ */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #0e0e12; }
+::-webkit-scrollbar-thumb { background: #b5a97a; border-radius: 2px; }
+
+/* â”€â”€â”€ Header â”€â”€â”€ */
+.header-container {
+    text-align: center;
+    padding: 3rem 1rem 1.5rem;
+    border-bottom: 1px solid rgba(181, 169, 122, 0.2);
+    margin-bottom: 2.5rem;
+    position: relative;
+}
+
+.header-container::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 60px; height: 2px;
+    background: linear-gradient(90deg, transparent, #b5a97a, transparent);
+}
+
+.main-title {
+    font-family: 'Playfair Display', serif !important;
+    font-size: 2.8rem !important;
+    font-weight: 900 !important;
+    color: #b5a97a !important;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.3rem !important;
+    text-shadow: 0 0 60px rgba(181, 169, 122, 0.3);
+}
+
+.subtitle {
+    font-size: 0.95rem;
+    color: #6e6a5e;
+    margin-bottom: 0.2rem;
+    font-style: italic;
+    letter-spacing: 0.03em;
+}
+
+.note {
+    font-size: 0.8rem;
+    color: #4a4840;
+    margin-top: 0.1rem;
+}
+
+/* â”€â”€â”€ Todo container â”€â”€â”€ */
+.todo-container {
+    max-width: 680px;
+    margin: 0 auto 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.todo-item {
+    background: linear-gradient(135deg, #1a1a22 0%, #16161e 100%);
+    border: 1px solid rgba(181, 169, 122, 0.12);
+    border-left: 3px solid #b5a97a;
+    border-radius: 6px;
+    padding: 0.85rem 1.2rem;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #d4cfc5;
+    letter-spacing: 0.01em;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+}
+
+.todo-item:hover {
+    border-left-color: #d4b96a;
+    background: linear-gradient(135deg, #1f1f28 0%, #1a1a22 100%);
+    transform: translateX(3px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+/* â”€â”€â”€ Empty state â”€â”€â”€ */
+.empty-state {
+    text-align: center;
+    color: #4a4840;
+    font-size: 1rem;
+    padding: 3rem;
+    font-style: italic;
+}
+
+/* â”€â”€â”€ Delete button (âœ•) â”€â”€â”€ */
+[data-testid="stButton"] button {
+    background: transparent !important;
+    border: 1px solid rgba(255,80,80,0.2) !important;
+    color: #6e3030 !important;
+    border-radius: 4px !important;
+    font-size: 0.8rem !important;
+    padding: 0.3rem 0.5rem !important;
+    height: 38px !important;
+    transition: all 0.2s ease !important;
+    width: 100%;
+}
+
+[data-testid="stButton"] button:hover {
+    background: rgba(255,80,80,0.1) !important;
+    border-color: rgba(255,80,80,0.5) !important;
+    color: #e06060 !important;
+}
+
+/* â”€â”€â”€ Input section â”€â”€â”€ */
+.input-section {
+    max-width: 680px;
+    margin: 0 auto;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(181, 169, 122, 0.1);
+}
+
+[data-testid="stTextInput"] {
+    margin-top: 0.5rem;
+}
+
+[data-testid="stTextInput"] label {
+    font-size: 0.78rem !important;
+    color: #6e6a5e !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase !important;
+    font-weight: 500 !important;
+    margin-bottom: 0.5rem !important;
+}
+
+[data-testid="stTextInput"] input {
+    background-color: #14141c !important;
+    border: 1px solid rgba(181, 169, 122, 0.2) !important;
+    border-radius: 6px !important;
+    color: #e8e4d9 !important;
+    font-family: 'DM Sans', sans-serif !important;
+    font-size: 1rem !important;
+    padding: 0.75rem 1rem !important;
+    transition: all 0.2s ease !important;
+    caret-color: #b5a97a;
+}
+
+[data-testid="stTextInput"] input::placeholder {
+    color: #3a3830 !important;
+    font-style: italic;
+}
+
+[data-testid="stTextInput"] input:focus {
+    border-color: #b5a97a !important;
+    box-shadow: 0 0 0 3px rgba(181, 169, 122, 0.08) !important;
+    outline: none !important;
+}
