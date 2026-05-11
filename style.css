@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap');
 
-/* â”€â”€â”€ Root & Background â”€â”€â”€ */
+/* ─── Root & Background ─── */
 html, body, [data-testid="stApp"] {
     background-color: #0e0e12 !important;
     color: #e8e4d9 !important;
